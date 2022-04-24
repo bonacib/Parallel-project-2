@@ -1,7 +1,7 @@
 // Bailey Bonaci
 // bonacib@oregonstate.edu
 // project 2
-// Source Cited: Code from Professor Mike Bailey with small enchancments by Bailey Bonaci
+// Source Cited: Code from Professor Mike Bailey with enchancments by Bailey Bonaci
 
 
 // print debugging messages?
@@ -14,7 +14,7 @@
 #define NUMT                4
 #endif
 
-// setting the number of trials in the monte carlo simulation:
+// setting the number of nodes: (but I cannot have one node)
 #ifndef NUMNODES
 #define NUMNODES       10
 #endif
@@ -26,15 +26,15 @@
 
 // Or, you could also use the <i>collapse</i> OpenMP clause:
 // The (2) means you are collapsing 2 nested for-loops into one
-// The end effect is exactly like what is shown above, but without you needing to do the mod and divide
-#pragma omp parallel for collapse(2) default(none) . . .
+#pragma omp parallel for collapse(2) default(none) private(iu,iv)
 for( int iv = 0; iv < NUMNODES; iv++ )
 {
 	for( int iu = 0; iu < NUMNODES; iu++ )
 	{
 		float z = Height( iu, iv );
 		// that z is only half of the superquadratic so double it
-        float z = z * 2
+                float z = z * 2
+                fprintf("height", z)
 	}
 }
 
@@ -44,9 +44,6 @@ for( int iv = 0; iv < NUMNODES; iv++ )
 const float N = 2.5f;
 const float R = 1.2f;
 
- . . .
-
-float
 Height( int iu, int iv )	// iu,iv = 0 .. NUMNODES-1
 {
 	float x = -1.  +  2.*(float)iu /(float)(NUMNODES-1);	// -1. to +1.
@@ -74,7 +71,6 @@ float Height( int, int );	// function prototype
 
 int main( int argc, char *argv[ ] )
 {
-	. . .
 
 	// the area of a single full-sized tile:
 	// (not all tiles are full-sized, though) 
@@ -85,26 +81,14 @@ int main( int argc, char *argv[ ] )
 	// sum up the weighted heights into the variable "volume"
 	// using an OpenMP for-loop and a reduction:
 
-
-
-omp_set_num_threads( NUMT );    // set the number of threads to use in parallelizing the for-loop:`
-
-        // better to define these here so that the rand() calls don't get into the thread timing:
-        float *txs  = new float [NUMTRIALS];
-        float *tys  = new float [NUMTRIALS];
-        float *txvs = new float [NUMTRIALS];
-        float *svs  = new float [NUMTRIALS];
-        float *sths = new float [NUMTRIALS];
-
-        // fill the random-value arrays:
-        for( int n = 0; n < NUMTRIALS; n++ )
+        #pragma opm parallel for default(none), shared(), reduction(+:sum) for(int i = 1; i < NUMNODES - 1; i++)
         {
-                txs[n]  = Ranf(  TXMIN,  TXMAX );
-                tys[n]  = Ranf(  TYMIN,  TYMAX );
-                txvs[n] = Ranf(  TXVMIN, TXVMAX );
-                svs[n]  = Ranf(  SVMIN,  SVMAX );
-                sths[n] = Ranf(  STHMIN, STHMAX );
+                
         }
+
+
+
+        omp_set_num_threads( NUMT );    // set the number of threads to use in parallelizing the for-loop:`
 
         // get ready to record the maximum performance and the probability:
         double  maxPerformance = 0.;    // must be declared outside the NUMTIMES loop
