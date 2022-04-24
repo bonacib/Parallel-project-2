@@ -3,6 +3,13 @@
 // project 2
 // Source Cited: Code from Professor Mike Bailey with enchancments by Bailey Bonaci
 
+#include <stdio.h>
+#define _USE_MATH_DEFINES
+#include <math.h>
+#include <stdlib.h>
+#include <time.h>
+#include <omp.h>
+
 // The main Program
 
 #define XMIN     -1.
@@ -38,7 +45,8 @@ float Height( int, int );	// function prototype
 float allHeights(NUMNODES)
 {
         // do i need this here? omp_set_num_threads( NUMT );    // set the number of threads to use in parallelizing the for-loop:`
-        #pragma omp parallel for collapse(2) default(none) shared(iv, iu) reduction(+:NUMNODES)
+        omp_set_num_threads( NUMT )
+        #pragma omp parallel for collapse(2) default(none)
         for( int iv = 0; iv < NUMNODES; iv++ )
         {
                 for( int iu = 0; iu < NUMNODES; iu++ )
@@ -91,8 +99,9 @@ int main( int argc, char *argv[ ] )
 	// using an OpenMP for-loop and a reduction:
 
         omp_set_num_threads( NUMT );    // set the number of threads to use in parallelizing the for-loop:`
-
-        #pragma opm parallel for default(none), reduction(+:sum) for(int i = 1; i < NUMNODES; i++)
+        #pragma opm parallel for default(none) shared(fullTileArea) reduction(+:sum)
+        // beacuse of that for we need a for loop this is not the right for loop 
+        for( int i = 1; i < NUMNODES; i++ )
         {
                 height = allHeights(NUMNODES);
                 fprint("height", height)
