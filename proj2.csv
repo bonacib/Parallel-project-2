@@ -1,3 +1,54 @@
- 1 threads :       10 NUMNODES ;       20 NUMTIMES ;  megaHeights/sec =   4.00
- 1 threads :      100 NUMNODES ;       20 NUMTIMES ;  megaHeights/sec =   3.72
- 1 threads :     1000 NUMNODES ;       20 NUMTIMES ;  megaHeights/sec =   3.68
+ 1 threads :        2 NUMNODES ;       20 NUMTIMES ;  megaHeights/sec =   3.01 ; volume =   0.00
+ 1 threads :        5 NUMNODES ;       20 NUMTIMES ;  megaHeights/sec =   4.33 ; volume =   7.25
+ 1 threads :       10 NUMNODES ;       20 NUMTIMES ;  megaHeights/sec =   3.82 ; volume =   7.64
+ 1 threads :       50 NUMNODES ;       20 NUMTIMES ;  megaHeights/sec =   3.21 ; volume =   7.76
+ 1 threads :       75 NUMNODES ;       20 NUMTIMES ;  megaHeights/sec =   3.74 ; volume =   7.76
+ 1 threads :      100 NUMNODES ;       20 NUMTIMES ;  megaHeights/sec =   3.72 ; volume =   7.76
+ 1 threads :      250 NUMNODES ;       20 NUMTIMES ;  megaHeights/sec =   3.70 ; volume =   7.76
+ 1 threads :      500 NUMNODES ;       20 NUMTIMES ;  megaHeights/sec =   3.75 ; volume =   7.76
+ 1 threads :      900 NUMNODES ;       20 NUMTIMES ;  megaHeights/sec =   3.78 ; volume =   7.76
+ 2 threads :        2 NUMNODES ;       20 NUMTIMES ;  megaHeights/sec =   2.57 ; volume =   0.00
+ 2 threads :        5 NUMNODES ;       20 NUMTIMES ;  megaHeights/sec =   5.67 ; volume =   7.25
+ 2 threads :       10 NUMNODES ;       20 NUMTIMES ;  megaHeights/sec =   5.28 ; volume =   7.64
+ 2 threads :       50 NUMNODES ;       20 NUMTIMES ;  megaHeights/sec =   4.05 ; volume =   7.76
+ 2 threads :       75 NUMNODES ;       20 NUMTIMES ;  megaHeights/sec =   7.33 ; volume =   7.76
+ 2 threads :      100 NUMNODES ;       20 NUMTIMES ;  megaHeights/sec =   7.41 ; volume =   7.76
+ 2 threads :      250 NUMNODES ;       20 NUMTIMES ;  megaHeights/sec =   7.35 ; volume =   7.76
+ 2 threads :      500 NUMNODES ;       20 NUMTIMES ;  megaHeights/sec =   7.21 ; volume =   7.76
+ 2 threads :      900 NUMNODES ;       20 NUMTIMES ;  megaHeights/sec =   7.42 ; volume =   7.76
+ 4 threads :        2 NUMNODES ;       20 NUMTIMES ;  megaHeights/sec =   2.10 ; volume =   0.00
+ 4 threads :        5 NUMNODES ;       20 NUMTIMES ;  megaHeights/sec =   7.56 ; volume =   7.25
+ 4 threads :       10 NUMNODES ;       20 NUMTIMES ;  megaHeights/sec =  11.25 ; volume =   7.64
+ 4 threads :       50 NUMNODES ;       20 NUMTIMES ;  megaHeights/sec =  11.21 ; volume =   7.76
+ 4 threads :       75 NUMNODES ;       20 NUMTIMES ;  megaHeights/sec =  14.62 ; volume =   7.76
+ 4 threads :      100 NUMNODES ;       20 NUMTIMES ;  megaHeights/sec =  14.49 ; volume =   7.76
+ 4 threads :      250 NUMNODES ;       20 NUMTIMES ;  megaHeights/sec =  14.22 ; volume =   7.76
+ 4 threads :      500 NUMNODES ;       20 NUMTIMES ;  megaHeights/sec =  14.38 ; volume =   7.76
+ 4 threads :      900 NUMNODES ;       20 NUMTIMES ;  megaHeights/sec =  14.40 ; volume =   7.76
+ 8 threads :        2 NUMNODES ;       20 NUMTIMES ;  megaHeights/sec =   1.27 ; volume =   0.00
+ 8 threads :        5 NUMNODES ;       20 NUMTIMES ;  megaHeights/sec =   5.46 ; volume =   7.25
+ 8 threads :       10 NUMNODES ;       20 NUMTIMES ;  megaHeights/sec =  14.40 ; volume =   7.64
+ 8 threads :       50 NUMNODES ;       20 NUMTIMES ;  megaHeights/sec =  21.33 ; volume =   7.76
+ 8 threads :       75 NUMNODES ;       20 NUMTIMES ;  megaHeights/sec =  22.30 ; volume =   7.76
+ 8 threads :      100 NUMNODES ;       20 NUMTIMES ;  megaHeights/sec =  22.26 ; volume =   7.76
+ 8 threads :      250 NUMNODES ;       20 NUMTIMES ;  megaHeights/sec =  20.71 ; volume =   7.76
+ 8 threads :      500 NUMNODES ;       20 NUMTIMES ;  megaHeights/sec =  22.81 ; volume =   7.76
+ 8 threads :      900 NUMNODES ;       20 NUMTIMES ;  megaHeights/sec =  28.11 ; volume =   7.76
+10 threads :        2 NUMNODES ;       20 NUMTIMES ;  megaHeights/sec =   1.22 ; volume =   0.00
+10 threads :        5 NUMNODES ;       20 NUMTIMES ;  megaHeights/sec =   6.40 ; volume =   7.25
+10 threads :       10 NUMNODES ;       20 NUMTIMES ;  megaHeights/sec =  16.52 ; volume =   7.64
+10 threads :       50 NUMNODES ;       20 NUMTIMES ;  megaHeights/sec =  27.13 ; volume =   7.76
+10 threads :       75 NUMNODES ;       20 NUMTIMES ;  megaHeights/sec =  27.56 ; volume =   7.76
+10 threads :      100 NUMNODES ;       20 NUMTIMES ;  megaHeights/sec =  27.46 ; volume =   7.76
+10 threads :      250 NUMNODES ;       20 NUMTIMES ;  megaHeights/sec =  28.01 ; volume =   7.76
+10 threads :      500 NUMNODES ;       20 NUMTIMES ;  megaHeights/sec =  28.71 ; volume =   7.76
+10 threads :      900 NUMNODES ;       20 NUMTIMES ;  megaHeights/sec =  31.89 ; volume =   7.76
+12 threads :        2 NUMNODES ;       20 NUMTIMES ;  megaHeights/sec =   0.96 ; volume =   0.00
+12 threads :        5 NUMNODES ;       20 NUMTIMES ;  megaHeights/sec =   4.69 ; volume =   7.25
+12 threads :       10 NUMNODES ;       20 NUMTIMES ;  megaHeights/sec =   9.85 ; volume =   7.64
+12 threads :       50 NUMNODES ;       20 NUMTIMES ;  megaHeights/sec =  17.98 ; volume =   7.76
+12 threads :       75 NUMNODES ;       20 NUMTIMES ;  megaHeights/sec =  32.63 ; volume =   7.76
+12 threads :      100 NUMNODES ;       20 NUMTIMES ;  megaHeights/sec =  33.02 ; volume =   7.76
+12 threads :      250 NUMNODES ;       20 NUMTIMES ;  megaHeights/sec =  31.19 ; volume =   7.76
+12 threads :      500 NUMNODES ;       20 NUMTIMES ;  megaHeights/sec =  33.40 ; volume =   7.76
+12 threads :      900 NUMNODES ;       20 NUMTIMES ;  megaHeights/sec =  35.18 ; volume =   7.76

@@ -22,7 +22,7 @@
 
 // setting the number of nodes:
 #ifndef NUMNODES
-#define NUMNODES       10
+#define NUMNODES       9
 #endif
 
 // how many tries to discover the maximum performance:
@@ -34,6 +34,8 @@
 const float N = 2.5f;
 const float R = 1.2f;
 float maxPerformance = 0;
+float volume;
+float time0;
 
 float
 Height( int iu, int iv )	// iu,iv = 0 .. NUMNODES-1
@@ -69,9 +71,6 @@ int main( int argc, char *argv[ ] )
         // area of a single full-sized tile:
         float fullTileArea = (  ( ( XMAX - XMIN )/(float)(NUMNODES-1) )  *
                                 ( ( YMAX - YMIN )/(float)(NUMNODES-1) )  );
-
-        int volume = 0;
-        int time0;
 
         // looking for the maximum performance:
         for( int times = 0; times < NUMTIMES; times++ )
@@ -114,5 +113,5 @@ int main( int argc, char *argv[ ] )
                         if( megaHeightsPerSecond > maxPerformance )
                                 maxPerformance = megaHeightsPerSecond;
         }
-        fprintf(stderr, "%2d threads : %8d NUMNODES ; %8d NUMTIMES ;  megaHeights/sec = %6.2lf\n", NUMT, NUMNODES, NUMTIMES, maxPerformance, volume/NUMTIMES);
+        fprintf(stderr, "%2d threads : %8d NUMNODES ; %8d NUMTIMES ;  megaHeights/sec = %6.2lf ; volume = %6.2lf\n", NUMT, NUMNODES, NUMTIMES, maxPerformance, volume/NUMTIMES, volume);
 }
